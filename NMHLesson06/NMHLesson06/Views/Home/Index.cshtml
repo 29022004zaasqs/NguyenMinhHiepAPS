@@ -1,0 +1,59 @@
+﻿@model IEnumerable<NMHLesson06.Models.NMHSong>
+
+@{
+    ViewBag.Title = "NMHSong";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Them Moi", "NMHCreate")
+</p>
+
+@if (Model != null && Model.Any())
+{
+    <table class="table">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.First().NMHTitle)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.First().NMHAuthor)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.First().NMHArtist)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.First().NMHYearRelease)
+            </th>
+            <th></th>
+        </tr>
+
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.NMHTitle)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.NMHAuthor)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.NMHArtist)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.NMHYearRelease)
+                </td>
+                <td>
+                    @Html.ActionLink("Edit", "Edit", new { id = item.ID }) |
+                    @Html.ActionLink("Details", "Details", new { id = item.ID }) |
+                    @Html.ActionLink("Delete", "Delete", new { id = item.ID })
+                </td>
+            </tr>
+        }
+    </table>
+}
+else
+{
+    <p>No songs available.</p>
+}
