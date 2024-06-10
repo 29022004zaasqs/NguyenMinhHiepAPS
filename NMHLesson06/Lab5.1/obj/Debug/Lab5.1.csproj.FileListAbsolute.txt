@@ -76,3 +76,4 @@ E:\APSNETNMH\NMHLesson06\Lab5.1\obj\Debug\Lab5.1.csproj.CoreCompileInputs.cache
 E:\APSNETNMH\NMHLesson06\Lab5.1\obj\Debug\Lab5.1.csproj.CopyComplete
 E:\APSNETNMH\NMHLesson06\Lab5.1\obj\Debug\Lab5.1.dll
 E:\APSNETNMH\NMHLesson06\Lab5.1\obj\Debug\Lab5.1.pdb
+E:\APSNETNMH\NMHLesson06\Lab5.1\obj\Debug\Lab5.1.csproj.AssemblyReference.cache
