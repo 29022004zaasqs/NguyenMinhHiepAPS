@@ -1,55 +1,49 @@
 ﻿using NMHBaiThiGiuaKy.Models;
-using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Web;
 using System.Web.Mvc;
 
-namespace NMHBaiThiGiuaKy.Controllers
+namespace NMHBaiDanhGiaGiuaKy.Controllers
 {
-    public class NMHController : Controller
+    public class NmhProductController : Controller
     {
         private static List<NmhProduct> nmhProducts = new List<NmhProduct>()
         {
-            new NmhProduct(){Id=106,NMHName="Lê Vinh Huy",NMHImage="1234",NMHQuantity=10,NMHPrice=1000000,NMHIsActive=true},
-            new NmhProduct(){Id=1,NMHName="Đỗ Trọng Thạo",NMHImage="1235",NMHQuantity=11,NMHPrice=2000000,NMHIsActive=true},
-        };
+            new NmhProduct(){NmhId=106,NmhFullName="Nguyễn Minh Hiệp",NmhImage="1234",NmhQuantity=10,NmhPrice=1000000,NmhIsActive=true},
+            new NmhProduct(){NmhId=1,NmhFullName="Đỗ Trọng Thạo",NmhImage="1235",NmhQuantity=11,NmhPrice=2000000,NmhIsActive=true},
 
-        public ActionResult NMHIndex()
+        };
+        // GET: NmhProduct
+        public ActionResult NmhIndex()
         {
             return View(nmhProducts);
         }
-
-        public ActionResult NMHCreate()
+        public ActionResult NmhCreate()
         {
             var nmhModel = new NmhProduct();
             return View(nmhModel);
         }
-
         [HttpPost]
-        public ActionResult NMHCreate(NmhProduct nmhProduct)
+        public ActionResult NmhCreate(NmhProduct nmhProduct)
         {
             if (!ModelState.IsValid)
             {
                 return View(nmhProduct);
             }
             nmhProducts.Add(nmhProduct);
-            return RedirectToAction("NMHIndex");
+            return RedirectToAction("NmhIndex");
         }
-
-        public ActionResult NMHEdit(int id)
+        public ActionResult NmhEdit(int id)
         {
-            var product = nmhProducts.Find(p => p.Id == id);
+            var product = nmhProducts.Find(p => p.NmhId == id);
             if (product == null)
             {
                 return HttpNotFound();
             }
             return View(product);
         }
-
-        public ActionResult NMHDetails(int id)
+        public ActionResult NmhDetails(int id)
         {
-            var product = nmhProducts.Find(p => p.Id == id);
+            var product = nmhProducts.Find(p => p.NmhId == id);
             if (product == null)
             {
                 return HttpNotFound();
@@ -59,27 +53,28 @@ namespace NMHBaiThiGiuaKy.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult NMHEdit(NmhProduct nmhProduct)
+        public ActionResult NmhEdit(NmhProduct nmhProduct)
         {
             if (!ModelState.IsValid)
             {
                 return View(nmhProduct);
             }
 
-            var product = nmhProducts.Find(p => p.Id == nmhProduct.Id);
+            var product = nmhProducts.Find(p => p.NmhId == nmhProduct.NmhId);
             if (product == null)
             {
                 return HttpNotFound();
             }
 
             // Cập nhật các giá trị
-            product.NMHName = nmhProduct.NMHName;
-            product.NMHImage = nmhProduct.NMHImage;
-            product.NMHQuantity = nmhProduct.NMHQuantity;
-            product.NMHPrice = nmhProduct.NMHPrice;
-            product.NMHIsActive = nmhProduct.NMHIsActive;
+            product.NmhFullName = nmhProduct.NmhFullName;
+            product.NmhImage = nmhProduct.NmhImage;
+            product.NmhQuantity = nmhProduct.NmhQuantity;
+            product.NmhPrice = nmhProduct.NmhPrice;
+            product.NmhIsActive = nmhProduct.NmhIsActive;
 
-            return RedirectToAction("NMHIndex");
+            return RedirectToAction("NmhIndex");
         }
+
     }
 }

@@ -1,0 +1,58 @@
+﻿@model  NMHBaiThiGiuaKy.Models.NmhProduct
+
+@{
+    ViewBag.Title = "NmhDetails";
+}
+
+<h2>NmhDetails</h2>
+
+<div>
+    <h4>NmhProduct</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.NmhFullName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NmhFullName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.NmhImage)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NmhImage)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.NmhQuantity)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NmhQuantity)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.NmhPrice)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NmhPrice)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.NmhIsActive)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NmhIsActive)
+        </dd>
+
+    </dl>
+</div>
+<div>
+    <a href="NmhEdit" asp-route-id="@Model.NmhId">Edit</a> |
+    <a href="NmhIndex">Back to List</a>
+</div>

@@ -1,0 +1,34 @@
+﻿@model IEnumerable<NmhLesson08.Models.NmhCategory>
+
+@{
+    ViewBag.Title = "NmhIndex";
+}
+
+<h2>NmhIndex</h2>
+
+<p>
+    @Html.ActionLink("NMH: Create New", "NMHCreate")
+</p>
+<table class="table table-bordered">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.First().NmhCategoryName) <!-- Sử dụng First() để tránh lỗi null -->
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.NmhCategoryName)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id = item.NmhCategoryId }) |
+                @Html.ActionLink("Details", "Details", new { id = item.NmhCategoryId }) |
+                @Html.ActionLink("Delete", "Delete", new { id = item.NmhCategoryId })
+            </td>
+        </tr>
+    }
+
+</table>

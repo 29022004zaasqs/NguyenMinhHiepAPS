@@ -1,0 +1,66 @@
+﻿@model NmhLesson08.Models.NmhBook
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>NmhBook</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.NmhCategory.NmhCategoryName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NmhCategory.NmhCategoryName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.NmhTitle)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NmhTitle)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.NmhAuthor)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NmhAuthor)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.NmhYear)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NmhYear)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.NmhPublisher)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NmhPublisher)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.NmhPicture)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NmhPicture)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.NmhBookId }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

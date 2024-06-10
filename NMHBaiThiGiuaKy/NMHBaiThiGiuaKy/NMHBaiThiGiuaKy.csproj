@@ -164,13 +164,13 @@
     <Content Include="Views\Home\About.cshtml" />
     <Content Include="Views\Home\Contact.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
-    <Content Include="Views\NMH\Index.cshtml" />
-    <Content Include="Views\NMH\NMHCreate.cshtml" />
-    <Content Include="Views\NMH\NMHEdit.cshtml" />
+    <Content Include="Views\NmhProduct\Index.cshtml" />
+    <Content Include="Views\NmhProduct\NMHCreate.cshtml" />
+    <Content Include="Views\NmhProduct\NMHEdit.cshtml" />
+    <Content Include="Views\NmhProduct\NmhDetails.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Views\NmhProduct\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />

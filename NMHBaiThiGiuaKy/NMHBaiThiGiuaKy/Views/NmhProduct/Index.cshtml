@@ -1,0 +1,58 @@
+﻿@model IEnumerable<NMHBaiThiGiuaKy.Models.NmhProduct>
+
+@{
+    ViewBag.Title = "NmhIndex";
+}
+
+<h2>NmhIndex</h2>
+
+<p>
+    @Html.ActionLink("NMH: Create New", "NmhCreate")
+</p>
+<table class="table table-bordered">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.NmhFullName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.NmhImage)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.NmhQuantity)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.NmhPrice)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.NmhIsActive)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.NmhFullName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.NmhImage)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.NmhQuantity)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.NmhPrice)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.NmhIsActive)
+            </td>
+            <td>
+                @Html.ActionLink("NMH: Edit", "NmhEdit", new { id = item.NmhId }) |
+                @Html.ActionLink("NMH: Details", "NmhDetails", new { id = item.NmhId }) |
+                @Html.ActionLink("NMH: Delete", "NmhDelete", new { id = item.NmhId })
+            </td>
+        </tr>
+    }
+
+</table>
